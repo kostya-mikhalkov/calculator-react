@@ -13,6 +13,14 @@ const Buttons = ({theme}) => {
                             </button>
                 })}
             </div>
+            <div className={`btn_num ${theme ? 'btn_num__light' : 'btn_num__dark'}`}>
+                {btnNum.map((item, ind) => {
+                    return <button className={`btn_num__button ${theme ? 'btn_num__button__light' : 'btn_num__button__dark'}`}
+                            key={ind}>
+                                {item}
+                           </button>
+                })}
+            </div>
         </div>
     )
 }
