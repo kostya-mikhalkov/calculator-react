@@ -154,4 +154,42 @@ body {
             }
         }
     }
+    &_arithmetics {
+        position: relative;
+        top: -433px;
+        left: 320px;
+        width: 70px;
+        height: 430px;
+        border-radius: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        &__light {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        &__dark {
+            background: rgba(5, 5, 5, 0.3);
+        }
+        &__button {
+            border: none;
+            background: none;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 600;
+            font-size: 26px;
+            text-align: center;
+            cursor: pointer;
+            &__light {
+                color: #373737;
+                &:active {
+                    color: #7dcdff;
+                }
+            }
+            &__dark {
+                color: aliceblue;
+                &:active {
+                    color: #373737;
+                }
+            }
+        }
+    }
 }

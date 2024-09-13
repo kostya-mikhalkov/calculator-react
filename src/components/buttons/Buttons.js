@@ -21,6 +21,14 @@ const Buttons = ({theme}) => {
                            </button>
                 })}
             </div>
+            <div className={`btn_arithmetics ${theme ? 'btn_arithmetics__light' : 'btn_arithmetics__dark'}`}>
+                {btnArithmetics.map((item, ind) => {
+                    return <button className={`btn_arithmetics__button ${theme ? 'btn_arithmetics__button__light' : 'btn_arithmetics__button__dark'}`}
+                            key={ind}>
+                                {item}
+                           </button>
+                })}
+            </div>
         </div>
     )
 }
