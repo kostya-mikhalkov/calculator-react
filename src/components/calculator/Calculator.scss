@@ -163,7 +163,7 @@ body {
         border-radius: 40px;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        // justify-content: space-between;
         &__light {
             background: rgba(255, 255, 255, 0.3);
         }
@@ -176,8 +176,15 @@ body {
             font-family: 'Times New Roman', Times, serif;
             font-weight: 600;
             font-size: 26px;
+            margin-top: 47px;
             text-align: center;
             cursor: pointer;
+            &__circle {
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                background: rgb(248, 149, 149);
+            }
             &__light {
                 color: #373737;
                 &:active {
