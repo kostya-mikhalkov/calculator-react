@@ -1,5 +1,5 @@
 
-const Buttons = ({theme}) => {
+const Buttons = ({theme, changeExp}) => {
     const btnReset = ['AC', '+/-', '%'];
     const btnNum = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '0', '00'];
     const btnArithmetics = ['÷', 'x', '-', '+', '='];
@@ -16,7 +16,9 @@ const Buttons = ({theme}) => {
             <div className={`btn_num ${theme ? 'btn_num__light' : 'btn_num__dark'}`}>
                 {btnNum.map((item, ind) => {
                     return <button className={`btn_num__button ${theme ? 'btn_num__button__light' : 'btn_num__button__dark'}`}
-                            key={ind}>
+                            key={ind}
+                            data-num={item}
+                            onClick={(e) => changeExp(e)}>
                                 {item}
                            </button>
                 })}
