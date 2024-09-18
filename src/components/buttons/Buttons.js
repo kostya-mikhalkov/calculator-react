@@ -8,7 +8,9 @@ const Buttons = ({theme, changeExp}) => {
             <div className={`btn_reset ${theme ? 'btn_reset__light' : 'btn_reset__dark'}`}>
                 {btnReset.map((item, ind) => {
                     return <button className={`btn_reset__button ${theme ? 'btn_reset__button__light' : 'btn_reset__button__dark'}`}
-                                    key={ind}>
+                                    key={ind}
+                                    data-num={item}
+                                    onClick={(e) => changeExp(e)}>
                                 {item}
                             </button>
                 })}
@@ -26,7 +28,9 @@ const Buttons = ({theme, changeExp}) => {
             <div className={`btn_arithmetics ${theme ? 'btn_arithmetics__light' : 'btn_arithmetics__dark'}`}>
                 {btnArithmetics.map((item, ind) => {
                     return <button className={`btn_arithmetics__button ${theme ? 'btn_arithmetics__button__light' : 'btn_arithmetics__button__dark'} ${btnArithmetics.length - 1 === ind ? 'btn_arithmetics__button__circle' : null}`}
-                            key={ind}>
+                            key={ind}
+                            data-num={item}
+                            onClick={(e) => changeExp(e)}>
                                 {item}
                            </button>
                 })}
