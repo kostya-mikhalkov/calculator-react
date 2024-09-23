@@ -59,8 +59,12 @@ body {
     margin-left: 35px;
     margin-top: 50px;
     &_save {
+        text-align: right;
+        font-size: 23px;
         width: 353px;
         height: 170px;
+        display: flex;
+        flex-direction: column;
     }
     &_input {
         width: 353px;

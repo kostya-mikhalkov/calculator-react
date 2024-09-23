@@ -9,7 +9,8 @@ import './Calculator.scss';
 
 const Calculator = () => {
     const [theme, setTheme] = useState(true);
-    const [expression, setExpression] = useState('0')
+    const [expression, setExpression] = useState('0');
+    const [history, setHistory] = useState([]);
 
     const changeAritmeticsArray = (arr) => {
         return arr.map(item => {
@@ -26,6 +27,29 @@ const Calculator = () => {
     const changeExpression = (e) => {
         const numCalc = e.target.getAttribute('data-num');
         setExpression(expression => {
+            if (numCalc === '=') {
+                if (expression.length === 1 || typeof expression === 'number') {
+                    return expression;
+                }
+                const lastNumber = expression[expression.length - 1];
+                const regExp = /[1-9]/gi;
+                if (!regExp.test(lastNumber)) {
+                    alert(`Вы незакончили выражение после символа`);
+                    return expression.slice(0, expression.length - 1);
+                }
+                const arrExpr = expression.split(/([+\-\x\÷])/);
+                const newArrInChangeAritmetics = changeAritmeticsArray(arrExpr);
+                setHistory(history => [...history, `${expression} = ${evaluate(newArrInChangeAritmetics.join(''))}`])
+                return evaluate(newArrInChangeAritmetics.join(''));
+            }
+            if (['-', '+', 'x', '÷'].includes(numCalc)) {
+                const lastChar = expression[expression.length - 1];
+                if (['-', '+', 'x', '÷'].includes(lastChar)) {
+                    return expression.slice(0, -1) + numCalc;
+                } else {
+                    return expression + numCalc;
+                }
+            }
             if (numCalc === '%') {
                 if (typeof expression === 'number') {
                     return expression
@@ -44,10 +68,12 @@ const Calculator = () => {
                         alert(`Вы незакончили выражение после символа ${operator}`);
                         return expression.slice(0, expression.length - 1);
                     }
+                setHistory(expression => [...expression, `${resultExpr} - ${finalPercent}% = ${resultExpr - finalPercent}`])
                 return resultExpr - finalPercent;
             }
             if (numCalc === 'AC') {
-                return '0'
+                setHistory([]);
+                return '0';
             }
             if (numCalc === '+/-' && expression[0] !== '-') {
                 if (expression[0] === '0') {
@@ -79,7 +105,7 @@ const Calculator = () => {
     return (
         <div className={`calc ${theme ? 'calc-light' : 'calc-dark'}`}>
             <ToggleTheme changeTheme={changeTheme} theme={theme}/>
-            <Display expr={expression} />
+            <Display expr={expression} history={history} theme={theme}/>
             <Buttons theme={theme} changeExp={changeExpression}/>
         </div>
     )
