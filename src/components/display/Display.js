@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const Display = ({expr, history, theme}) => {
     const arr = history.filter((item, ind, arr) => arr.indexOf(item) === ind);
     return (
