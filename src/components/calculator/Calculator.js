@@ -37,7 +37,7 @@ const Calculator = () => {
                     alert(`Вы незакончили выражение после символа`);
                     return expression.slice(0, expression.length - 1);
                 }
-                const arrExpr = expression.split(/([+\-\x\÷])/);
+                const arrExpr = expression.split(/([+\-\x÷])/);
                 const newArrInChangeAritmetics = changeAritmeticsArray(arrExpr);
                 setHistory(history => [...history, `${expression} = ${evaluate(newArrInChangeAritmetics.join(''))}`])
                 return evaluate(newArrInChangeAritmetics.join(''));
@@ -54,7 +54,7 @@ const Calculator = () => {
                 if (typeof expression === 'number') {
                     return expression
                 }
-                const arrExpr = expression.split(/([+\-\x\÷])/);
+                const arrExpr = expression.split(/([+\-\x÷])/);
                 if (arrExpr.length === 1) {
                     return expression;
                 }
