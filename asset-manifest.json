@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/kostya-mikhalkov/calculator-react/static/css/main.666148b2.css",
+    "main.js": "/kostya-mikhalkov/calculator-react/static/js/main.6c30345b.js",
+    "static/media/sun-dark.svg": "/kostya-mikhalkov/calculator-react/static/media/sun-dark.4fe02392850affff4b6bba9b8f6b0293.svg",
+    "static/media/sun-light.svg": "/kostya-mikhalkov/calculator-react/static/media/sun-light.dda3e5eaa6382a12b54810146ac7c559.svg",
+    "static/media/moon-dark.svg": "/kostya-mikhalkov/calculator-react/static/media/moon-dark.52a8d07f0534843c603457a6d2f0504b.svg",
+    "static/media/moon-light.svg": "/kostya-mikhalkov/calculator-react/static/media/moon-light.3ece3ced886c544d1c9b09a4217ca8af.svg",
+    "index.html": "/kostya-mikhalkov/calculator-react/index.html",
+    "main.666148b2.css.map": "/kostya-mikhalkov/calculator-react/static/css/main.666148b2.css.map",
+    "main.6c30345b.js.map": "/kostya-mikhalkov/calculator-react/static/js/main.6c30345b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.666148b2.css",
+    "static/js/main.6c30345b.js"
+  ]
+}
